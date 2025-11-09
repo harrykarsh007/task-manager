@@ -1,0 +1,148 @@
+{
+  "tasks": [
+    {
+      "title": "Python",
+      "description": "Need to start deep learning",
+      "dueDate": "2024-08-14",
+      "status": "Accepted",
+      "checked": true,
+      "id": "1005"
+    },
+    {
+      "title": "React",
+      "description": "Need to clear the concepts",
+      "dueDate": "2024-09-13",
+      "status": "Accepted",
+      "checked": true,
+      "id": "1003"
+    },
+    {
+      "title": "JavaScript",
+      "description": "Deeper learning required",
+      "dueDate": "2024-08-13",
+      "status": "Accepted",
+      "checked": false,
+      "id": "1001"
+    },
+    {
+      "id": "1006",
+      "title": "Node Js",
+      "description": "Description of Node JS",
+      "dueDate": "2024-08-15",
+      "status": "Accepted",
+      "checked": true
+    },
+    {
+      "title": "Mongo DB",
+      "description": "Description",
+      "dueDate": "2024-08-16",
+      "status": "Accepted",
+      "checked": false,
+      "id": "1007"
+    },
+    {
+      "title": "Bootstrap & CSS",
+      "description": "Again description here",
+      "dueDate": "2024-09-10",
+      "status": "Accepted",
+      "checked": true,
+      "id": "1008"
+    },
+    {
+      "title": "Spring Boot",
+      "description": "Descriptions Here",
+      "dueDate": "2024-08-27",
+      "status": "Accepted",
+      "checked": false,
+      "id": "1009"
+    },
+    {
+      "title": "Core Java",
+      "description": "Need to master it",
+      "dueDate": "2024-09-20",
+      "status": "Accepted",
+      "checked": true,
+      "id": "1010"
+    },
+    {
+      "id": "1004",
+      "title": "Raipur Flat",
+      "description": "I need to register home in Raipur",
+      "dueDate": "2025-11-20",
+      "status": "Accepted",
+      "checked": false
+    },
+    {
+      "id": "1002",
+      "title": "Kosir House",
+      "description": "Need to complete tiles and electric task",
+      "dueDate": "2025-11-20",
+      "status": "Accepted",
+      "checked": false
+    },
+    {
+      "id": "1011",
+      "title": "Bhaisakhuri Visit",
+      "description": "Need to visit for funeral function in Bhainsakhuri Basna",
+      "dueDate": "2025-11-14",
+      "status": "Accepted",
+      "checked": false
+    }
+  ],
+  "users": [
+    {
+      "id": "USER1001",
+      "name": "Nandini Karsh",
+      "email": "nandu1309@gmail.com",
+      "dob": "1997-12-09",
+      "password": "$2b$10$5wzzkxGfk.Wo2w.EEGkbgueWVB12Oodmk4iZpCB5Za9RfMGlt3Awy",
+      "verified": false,
+      "created_on": "2025-11-08T17:49:14.404Z"
+    },
+    {
+      "id": "USER1002",
+      "name": "Harendra Kumar Karsh",
+      "email": "harrykarsh@gmail.com",
+      "dob": "1994-10-01",
+      "password": "$2b$10$/uxqBlpt1f2fQtxW6xEyBOr0Xp7om6wyJHsbClKDRKcOS6VNcEjvG",
+      "verified": false,
+      "created_on": "2025-11-08T18:14:33.885Z"
+    },
+    {
+      "id": "USER1003",
+      "name": "Amit Karsh",
+      "email": "amitkarsh@gmail.com",
+      "dob": "1991-08-15",
+      "password": "$2b$10$lfyfcZyK4Kc8XH23hq0ybu3sc05zX0xh3ROYj.l/s2bEwaMU/zMvm",
+      "verified": false,
+      "created_on": "2025-11-08T19:23:42.705Z"
+    },
+    {
+      "id": "USER1004",
+      "name": "Ritik Karsh",
+      "email": "ritikkarsh@gmail.com",
+      "dob": "2007-10-01",
+      "password": "$2b$10$fRYJX1FlDMms6WWLZ4nDeuJFeqmVnJIxBvjQ3ATO6FSsSIRu8T/IK",
+      "verified": false,
+      "created_on": "2025-11-09T08:15:55.331Z"
+    },
+    {
+      "id": "USER1005",
+      "name": "Roshan Karsh",
+      "email": "roshankarsh@gmail.com",
+      "dob": "2005-01-10",
+      "password": "$2b$10$IBMjBZts.2IouQhDO9eK4OfkevtxPDTsUV1pIqpGMA6jQmezbHp8y",
+      "verified": false,
+      "created_on": "2025-11-09T08:18:29.205Z"
+    },
+    {
+      "id": "USER1006",
+      "name": "Divvyansh",
+      "email": "divyansh@gmail.com",
+      "dob": "2019-03-30",
+      "password": "$2b$10$cMYGTEeQBlVD5G.ApJaL8eKesTCI3qBh6j3rUDX3/cZyzMtqKCLiq",
+      "verified": false,
+      "created_on": "2025-11-09T09:30:43.342Z"
+    }
+  ]
+}

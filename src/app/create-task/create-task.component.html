@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-primary">Create New Task</h1>
+            <div class="card border border-primary">
+                <div class="card-body">
+                    <form [formGroup]="taskForm" (submit)="onSubmit()">
+                        <div class="form-group mt-3">
+                            <label for="id">Task Id</label>
+                            <input type="text" class="form-control bg-light" formControlName="id" readonly placeholder="Enter task id">
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" formControlName="title" placeholder="Enter title">
+                            
+                            @if (title && title.touched || title?.dirty) {
+                                @if (title?.errors?.['required']) {
+                                    <span class="text-danger">Title is required.</span>
+                                } 
+                                @if (title?.errors?.['minlength']) {
+                                    <span class="text-danger">Title must be at least 4 characters long.</span>
+                                }
+                            }
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" formControlName="description" placeholder="Enter description">
+                            @if (desc && desc.touched || desc?.dirty) {
+                                @if (desc?.errors?.['required']) {
+                                    <span class="text-danger">Description is required.</span>
+                                } 
+                                @if (desc?.errors?.['minlength']) {
+                                    <span class="text-danger">Task description must be at least 4 characters long.</span>
+                                }
+                            }
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="dueDate">Due Date</label>
+                            <input type="date" class="form-control" formControlName="dueDate">
+                            @if (date && date.touched || date?.dirty) {
+                                @if (date?.errors?.['required']) {
+                                    <span class="text-danger">Due date is required.</span>
+                                }
+                            }
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="checkbox" formControlName="checked"> Checked
+                        </div>
+                        <button type="submit" [disabled]="taskForm.invalid" class="btn btn-primary mt-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
