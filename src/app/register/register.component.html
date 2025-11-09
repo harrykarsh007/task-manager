@@ -1,0 +1,133 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card border border-success">
+          <div class="card-body">
+  
+            <h1 class="text-success text-center mb-4">Register</h1>
+  
+            <form [formGroup]="registerForm" class="m-4" (ngSubmit)="signUp()">
+  
+              <!-- Name -->
+              <div class="form-group mb-3">
+                <label for="name">Name <span class="text-danger">*</span></label>
+                <input 
+                  type="text" 
+                  id="name"
+                  class="form-control" 
+                  formControlName="name" 
+                  placeholder="Enter name"
+                >
+                @if (name?.touched || name?.dirty) {
+                  @if (name?.errors?.['required']) {
+                    <span class="text-danger">Name is required.</span>
+                  }
+                  @else if (name?.errors?.['minlength']) {
+                    <span class="text-danger">Name must be at least 4 characters.</span>
+                  }
+                }
+              </div>
+  
+              <!-- Email -->
+              <div class="form-group mb-3">
+                <label for="email">Email <span class="text-danger">*</span></label>
+                <input 
+                  type="email" 
+                  id="email"
+                  class="form-control" 
+                  formControlName="email" 
+                  placeholder="Enter email"
+                >
+                @if (email?.touched || email?.dirty) {
+                  @if (email?.errors?.['required']) {
+                    <span class="text-danger">Email is required.</span>
+                  }
+                  @else if (email?.errors?.['email']) {
+                    <span class="text-danger">Enter a valid email address.</span>
+                  }
+                }
+              </div>
+  
+              <!-- DOB -->
+              <div class="form-group mb-3">
+                <label for="dob">DOB <span class="text-danger">*</span></label>
+                <input 
+                  type="date" 
+                  id="dob"
+                  class="form-control" 
+                  formControlName="dob"
+                >
+                @if (dob?.touched || dob?.dirty) {
+                  @if (dob?.errors?.['required']) {
+                    <span class="text-danger">DOB is required.</span>
+                  }
+                }
+              </div>
+  
+              <!-- Password -->
+              <div class="form-group mb-3">
+                <label for="password">Password <span class="text-danger">*</span></label>
+                <input 
+                  type="password" 
+                  id="password"
+                  class="form-control" 
+                  formControlName="password" 
+                  placeholder="Enter password"
+                >
+                @if (password?.touched || password?.dirty) {
+                  @if (password?.errors?.['required']) {
+                    <span class="text-danger">Password is required.</span>
+                  }
+                  @else if (password?.errors?.['pattern']) {
+                    <span class="text-danger">
+                      Password must contain at least 8 characters, 
+                      1 uppercase letter, 1 number, and 1 special character.
+                    </span>
+                  }
+                }
+              </div>
+  
+              <!-- Confirm Password -->
+              <div class="form-group mb-3">
+                <label for="cpassword">Confirm Password <span class="text-danger">*</span></label>
+                <input 
+                  type="password" 
+                  id="cpassword"
+                  class="form-control" 
+                  formControlName="cpassword" 
+                  placeholder="Confirm password"
+                >
+                @if (cpassword?.touched || cpassword?.dirty) {
+                  @if (cpassword?.errors?.['required']) {
+                    <span class="text-danger">Confirm Password is required.</span>
+                  }
+                }
+  
+                <!-- Password mismatch from form-level validator -->
+                @if (registerForm.errors?.['mismatch'] && cpassword?.touched) {
+                  <span class="text-danger">Passwords do not match.</span>
+                }
+              </div>
+  
+              <!-- Submit Button -->
+              <button 
+                type="submit" 
+                class="btn btn-success mt-2"
+                [disabled]="!registerForm.valid"
+              >
+                Register
+              </button>
+  
+            </form>
+  
+            <p class="ms-4">
+              Already have an account? 
+              <span class="text-primary pointer" routerLink="/login">Login Now</span>
+            </p>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
