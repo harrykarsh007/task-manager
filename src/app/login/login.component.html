@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card border border-primary">
+                <div class="card-body">
+                    <h1 class="text-primary text-center">Login</h1>
+                    <form [formGroup]="loginForm" class="m-4" (submit)="auth()">
+                        <div class="form-group mt-3">
+                            <label for="email">Email <span class="text-danger">*</span></label>
+                            <input type="email" email class="form-control" formControlName="email" placeholder="Enter email">
+                            
+                            @if (email && email.touched || email?.dirty) {
+                                @if (email?.errors?.['required']) {
+                                    <span class="text-danger">Email is required.</span>
+                                } 
+                            }
+
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="password">Password <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" formControlName="password" placeholder="Enter password">                            
+                            @if (password && password.touched || password?.dirty) {
+                                @if (password?.errors?.['required']) {
+                                    <span class="text-danger">Password is required.</span>
+                                }
+                            }
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="checkbox" formControlName="remember"> Remember Me
+                        </div>
+                        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary mt-3">Login</button>
+                    </form>
+                    <p class="ms-4"> Doesn't have an account? <span class="text-primary pointer" routerLink="/register">Register Now</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
