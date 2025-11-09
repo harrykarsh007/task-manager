@@ -1,0 +1,82 @@
+@if (isLoading) {
+    <div class="spin spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+} @else {
+    <div class="container mt-5">
+        @if (selectedId === '') {
+            <h1 class="text-warning">Update Tasks</h1>
+            <table class="table table-hover border-warning table-bordered mt-3">
+                <thead>
+                <tr>
+                    <th scope="col">Task ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @for (task of tasks; track $index) {
+                        <tr>
+                            <td scope="row">{{task.id}}</td>
+                            <td>{{task.title}}</td>
+                            <td>{{task.description}}</td>
+                            <td>{{task.dueDate | date }}</td>
+                            <td>
+                                <i class="bi bi-pencil-fill btn btn-warning action-btn text-white" (click)="editTask(task)"></i>
+                            </td>
+                        </tr>  
+                    }
+                </tbody>
+            </table>
+        } @else {
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="text-warning">Update Task</h1>
+                    <div class="card border border-warning">
+                        <div class="card-body">
+                            <form [formGroup]="editForm" (submit)="onSubmit()">
+                                <div class="form-group mt-3">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" formControlName="title" placeholder="Enter title">
+                                    @if (title && title.touched || title?.dirty) {
+                                        @if (title?.errors?.['required']) {
+                                            <span class="text-danger">Title is required.</span>
+                                        } 
+                                        @if (title?.errors?.['minlength']) {
+                                            <span class="text-danger">Title must be at least 4 characters long.</span>
+                                        }
+                                    }
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="description">Description</label>
+                                    <input type="text" class="form-control" formControlName="description" placeholder="Enter description">
+                                    @if (desc && desc.touched || desc?.dirty) {
+                                        @if (desc?.errors?.['required']) {
+                                            <span class="text-danger">Description is required.</span>
+                                        } 
+                                        @if (desc?.errors?.['minlength']) {
+                                            <span class="text-danger">Task description must be at least 4 characters long.</span>
+                                        }
+                                    }
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="dueDate">Due Date</label>
+                                    <input type="date" class="form-control" formControlName="dueDate">
+                                    @if (date && date.touched || date?.dirty) {
+                                        @if (date?.errors?.['required']) {
+                                            <span class="text-danger">Due date is required.</span>
+                                        }
+                                    }
+                                </div>
+                                <button type="submit" [disabled]="editForm.invalid" class="btn btn-warning text-white mt-3 me-2">Update</button>
+                                <button type="button" (click)="selectedId = ''; editForm.reset()" class="btn btn-secondary mt-3">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

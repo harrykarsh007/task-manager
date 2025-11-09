@@ -1,0 +1,29 @@
+.pointer {
+    cursor: pointer;
+}
+.text-white {
+    color: aliceblue !important;
+}
+.action-btn {
+    --bs-btn-padding-x: 0.4rem !important;
+    --bs-btn-padding-y: 0.2rem !important;
+    --bs-btn-font-size: 0.8rem !important;
+}
+.spin {
+    position: absolute;
+    left: 49%;
+    top: 45%;
+}
+.bg-grey {
+    background: #dee2e6 !important;
+}
+.logout {
+    font-weight: bolder !important;
+    font-size: 1.5rem !important;
+}
+input{
+    outline: none !important;
+}
+input:focus{
+    outline: none !important;
+}
